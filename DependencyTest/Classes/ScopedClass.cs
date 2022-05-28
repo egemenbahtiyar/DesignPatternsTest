@@ -8,10 +8,6 @@ namespace DependencyTest.Classes
 {
     public class ScopedClass : IDeneme1
     {
-        public string IChildInterfaceFunction()
-        {
-            return "Scoped Class was worked.(ChildInterfaceFunction)";
-        }
         public string Deneme1Function()
         {
             return "Scoped Class 1 was worked.";

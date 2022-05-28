@@ -8,10 +8,6 @@ namespace DependencyTest.Classes
 {
     public class SingletonClass : IDeneme1
     {
-        public string IChildInterfaceFunction()
-        {
-            return "Singleton Class was worked.(ChildInterfaceFunction)";
-        }
         public string Deneme1Function()
         {
             return "Singleton Class 1 was worked.";

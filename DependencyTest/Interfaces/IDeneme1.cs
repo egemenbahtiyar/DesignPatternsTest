@@ -5,10 +5,11 @@ using System.Threading.Tasks;
 
 namespace DependencyTest.Interfaces
 {
-    public interface IDeneme1 : IChildInterface
+    public interface IDeneme1
     {
-        string Deneme2Function();
         string Deneme1Function();
+        string Deneme2Function();
+        
 
 
     }

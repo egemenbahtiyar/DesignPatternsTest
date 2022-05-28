@@ -11,22 +11,34 @@ using DependencyTest.Decorators;
 
 namespace DependencyTest.Controllers
 {
-    [Route("api/[controller]/[action]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class ThirdNinja : ControllerBase
     {
-        public IDeneme1 _IDeneme1 { get; set; }
-        public ThirdNinja(IDeneme1 IDeneme1)
+        public DependencyFactory _DependencyFactory;
+        public ThirdNinja(DependencyFactory dependencyFactory)
         {
-            _IDeneme1 = IDeneme1;
-            
+            _DependencyFactory = dependencyFactory;
+
         }
         [HttpGet]
         public IActionResult GetString()
         {
-            var String = _IDeneme1.Deneme2Function();
-            Console.WriteLine(String);
-            return Ok(String);
+
+            var obj1 =_DependencyFactory.GetDependencyModel("Scoped").Deneme1Function();
+            var obj2 =_DependencyFactory.GetDependencyModel("Singleton").Deneme1Function();
+            var obj3 =_DependencyFactory.GetDependencyModel("Transient").Deneme1Function();
+            var result = new
+            {
+                Output1 = obj1,
+                Output2 = obj2,
+                Output3 = obj3
+
+            };
+
+            return Ok(result);
+
+
 
             //var dinozor = new Gigantosaurus();
             //var azSesliDinozor = new LoudGigantosarusDecorator(dinozor);

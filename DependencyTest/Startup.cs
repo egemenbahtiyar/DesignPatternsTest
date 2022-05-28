@@ -29,10 +29,9 @@ namespace DependencyTest
         {
             services.AddControllers();
 
-            //DEPENDENCY INJECTION PART**********************************
-            services.AddScoped<IDeneme1, ScopedClass>();
-            services.AddScoped<IDeneme1, SingletonClass>();
-            services.AddScoped<IDeneme1, TransientClass>();
+            services.AddScoped<DependencyFactory,DependencyChooser>();
+
+
 
 
 
