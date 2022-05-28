@@ -33,8 +33,8 @@ namespace DependencyTest
             services.AddScoped<IDeneme1, ScopedClass>();
             services.AddScoped<IDeneme1, SingletonClass>();
             services.AddScoped<IDeneme1, TransientClass>();
-            
-        
+
+
 
         }
 

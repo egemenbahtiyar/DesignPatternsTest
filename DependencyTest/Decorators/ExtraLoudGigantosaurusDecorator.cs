@@ -4,20 +4,20 @@ using System.Linq;
 using System.Threading.Tasks;
 using DependencyTest.Interfaces;
 
-namespace DependencyTest.Classes
+namespace DependencyTest.Decorators
 {
-    public class LoudGigantosarusDecorator : IGiganotosaurus
+    public class ExtraLoudGigantosaurusDecorator : IGiganotosaurus
     {
         protected readonly IGiganotosaurus _gigantosaurus;
 
-        public LoudGigantosarusDecorator(IGiganotosaurus gigantosaurus)
+        public ExtraLoudGigantosaurusDecorator(IGiganotosaurus gigantosaurus)
         {
             _gigantosaurus = gigantosaurus;
         }
 
         public string Roar()
         {
-            return $"{_gigantosaurus.Roar()} loudly";
+            return $"{_gigantosaurus.Roar()}!";
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DependencyTest.Interfaces;
 
-namespace DependencyTest.Classes
+namespace DependencyTest.Decorators
 {
     public class Gigantosaurus : IGiganotosaurus
     {

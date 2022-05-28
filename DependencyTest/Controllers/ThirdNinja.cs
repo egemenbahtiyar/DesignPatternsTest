@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 using DependencyTest.Classes;
+using DependencyTest.Decorators;
 
 namespace DependencyTest.Controllers
 {
@@ -23,25 +24,25 @@ namespace DependencyTest.Controllers
         [HttpGet]
         public IActionResult GetString()
         {
-            //var String =_IDeneme1.Deneme2Function();
-            //Console.WriteLine(String);
-            //return Ok(String);
+            var String = _IDeneme1.Deneme2Function();
+            Console.WriteLine(String);
+            return Ok(String);
 
-            var dinozor = new Gigantosaurus();
-            var azSesliDinozor = new LoudGigantosarusDecorator(dinozor);
-            var cokSesliDonozor = new ExtraLoudGigantosaurusDecorator(dinozor);
+            //var dinozor = new Gigantosaurus();
+            //var azSesliDinozor = new LoudGigantosarusDecorator(dinozor);
+            //var cokSesliDonozor = new ExtraLoudGigantosaurusDecorator(azSesliDinozor);
 
-            var testString = dinozor.Roar();
-            var testString2 = azSesliDinozor.Roar();
-            var testString3 = cokSesliDonozor.Roar();
+            //var testString = dinozor.Roar();
+            //var testString2 = azSesliDinozor.Roar();
+            //var testString3 = cokSesliDonozor.Roar();
 
-            var result = new
-            {
-                testString = testString,
-                testString2 = testString2,
-                testString3 = testString3
-            };
-            return Ok(result);
+            //var result = new
+            //{
+            //    testString = testString,
+            //    testString2 = testString2,
+            //    testString3 = testString3
+            //};
+            //return Ok(result);
 
         }     
     }
